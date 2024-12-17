@@ -1,6 +1,9 @@
 // Problem #1 //
+//I: student object
+//O: string of text that represents students prep observations
 function getFirstPrepObservation(object){
-    
+    console.log(student.courses[0].observations[0].text)
+    return student.courses[0].observations[0].text;
 }
 
 // Problem #2 //
