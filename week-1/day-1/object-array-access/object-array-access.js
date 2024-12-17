@@ -15,14 +15,18 @@ function getFirstPrepObservation(object){
 //O: return a string of the name of the author and role of last observation from the last phase attempted
 //C: access the last phase attempted (bootcamp) AND last date observed
 function getLastObservationAuthor(object){
-    //access the name 
-    let name =
+    //acesss the last observation
+    let lastCourse = student.courses[student.courses.length - 1];
+    //access the last observation using the last course variable
+    let lastObservation = lastCourse.observations[lastCourse.observations.length - 1];
+    //access the name, dont hard code 
+    let lastName = lastObservation.author.name;
     //access the role
-    let role = 
+    let lastRole = lastObservation.author.role;
     //console log to debug
  
     //return using literal strings
-    return `${name} - ${role}`;
+    return `${lastName} - ${lastRole}`;
     
 }
 
