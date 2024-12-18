@@ -33,16 +33,44 @@ function getLastObservationAuthor(object){
 
 // Problem #3 //
 //I: a student object
-//O
-//C
+//O: a string of the last course the user has taken followed by status (course-status) 
+//C: assume the last course is the last chronologically
 function getLastCourseNameAndStatus(object){
-    
+    //access the last course (make a general variable)
+    let course = student.courses[student.courses.length - 1];
+    //use this to access the last courseName
+    let name = course.courseName;
+    //use this to access the last course's status
+    let status = course.status;
+    //return the last course and student
+    return `${name} - ${status}`;
+  
+
+
+
+
 }
 
 // Problem #4 //
-function createSimplifiedObject(object){
-    
+//I: a student object
+//O: an object with the use name, age, location, courses
+function createSimplifiedObject(student){
+//add the first and last name into a name
+let name = student.firstName + " " + student.lastName;
+//access the age
+let age = student.age;
+//add the city and state to make location
+let location = student.city + "," + student.state;
+//use .length of the courses array to find number
+let courses = student.courses.length;
+ return {
+    name: name,
+    age: age,
+    location: location,
+    courses: courses
+  };
 }
+
 
 // Problem #5 //
 function createString(object){
