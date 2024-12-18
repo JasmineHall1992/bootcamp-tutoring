@@ -4,7 +4,16 @@
 1. Create a function called `logLocationAndTime` that takes in one parameter - `array` - which represents an array of student objects like the one featured in data.js. This function should use a for loop to iterate backwards through the input array, and each iteration it should log the current student's location followed by a dash and their timezone.
 ```javascript
 // example output
-logLocationAndTime(students);
+//I: a students array
+//O: the student's location followed by a dash and timezone (New Orleans, LA - CST)
+logLocationAndTime(students){
+    for (let i = 0; i < students.length; i++)
+    //make a variable that we will console log location and time
+    let local = students[i].location; 
+    let zone = students[i].timeZone;
+        console.log(students)
+}
+;
 /*
 LOGS =>
 Baltimore, MD - EST

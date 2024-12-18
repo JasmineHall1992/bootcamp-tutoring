@@ -295,7 +295,7 @@ Let's consider a relatively straightforward problem first: create a for loop to 
 The first part of this problem is relatively simple... if we want to create a loop to iterate over `user` we need to create a counting sequence with a counting variable that starts at zero...
 
 ```javascript
-for (let i = 0; _____; _____){
+for (let i = 0; i < users.length; ){
 
 }
 ```
