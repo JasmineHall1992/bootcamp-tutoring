@@ -19,8 +19,11 @@ function logLocationAndTime(students){
 //I: input a students array
 //O: output students name and the number of courses taken
 function logHalf(array){
+    //iterate through only half of the array by dividing in half
     for (let i = 0; i < Math.floor(numbers.length / 2); i++) {
-       //make variables for the
+       //make variables for the name and number of attempts using access
+       let name = students[i].name;
+       let attempts = students[i].
       }
     
 }
