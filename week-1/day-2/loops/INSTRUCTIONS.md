@@ -7,11 +7,14 @@
 //I: a students array
 //O: the student's location followed by a dash and timezone (New Orleans, LA - CST)
 logLocationAndTime(students){
+    //iterate BACKWARDS
     for (let i = 0; i < students.length; i++)
     //make a variable that we will console log location and time
     let local = students[i].location; 
     let zone = students[i].timeZone;
-        console.log(students)
+    //make a template literal to log
+    let output = `${local} - ${zone}`;
+        console.log(output)
 }
 ;
 /*
