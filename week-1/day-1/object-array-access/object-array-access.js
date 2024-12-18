@@ -60,7 +60,7 @@ let name = student.firstName + " " + student.lastName;
 //access the age
 let age = student.age;
 //add the city and state to make location
-let location = student.city + "," + student.state;
+let location = student.city + ", " + student.state;
 //use .length of the courses array to find number
 let courses = student.courses.length;
  return {
@@ -73,8 +73,25 @@ let courses = student.courses.length;
 
 
 // Problem #5 //
-function createString(object){
-    
+//I: student object
+//O: Name, 
+    // State & TimeZone: state - EST
+        //Date of last course: date (nameofCourse)  
+//C: separate each line with a line break
+function createString(student){
+    //create the name, first and last name with initial
+let name = student.firstName + " " + student.lastName[0] + ".";
+//create the state and timezone
+let location = `State & Time Zone: ${student.state} - ${student.timeZone}`;
+//create the date of the last course
+//create a last course variable first (this is all for the date variable)
+let lastClass = student.courses[student.courses.length - 1];
+let lastDate = lastClass.dateOfLastAttempt;
+let className = lastClass.courseName;
+let date = `Date of Last Course: ${lastDate} (${className})`;
+//return everything put together
+return `${name}\n${location}\n${date}\n`; 
+
 }
 
 
