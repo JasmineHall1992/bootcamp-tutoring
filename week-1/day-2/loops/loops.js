@@ -16,7 +16,12 @@ function logLocationAndTime(students){
 
 
 // Problem #2 //
+//I: input a students array
+//O: output students name and the number of courses taken
 function logHalf(array){
+    for (let i = 0; i < Math.floor(numbers.length / 2); i++) {
+       //make variables for the
+      }
     
 }
 
