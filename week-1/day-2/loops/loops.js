@@ -84,13 +84,11 @@ function getCoursesByYear(array, year){
     //construct a for loop to go through the array "students"
     for (let i = 0; i < array.length; i++){
         //this is the current student object
-        let courses = array[i].courses;
+        const courses = array[i].courses;
     //create a nested array that looks through the students courses
         for (let j = 0; j < courses.length; j++){
-            //this is the current course
-            let course = student.courses[j];
             //check if the courses last attempted year matches the input
-            if (course.dateOfLastAttempt === year){
+            if (courses[j].dateOfLastAttempt.includes(year)){
                 let courseObj = {
                     studentName: student.name,
                     courseName: courseName[j].name,
