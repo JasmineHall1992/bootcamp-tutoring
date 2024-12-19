@@ -1,6 +1,6 @@
 
 // Problem #1 // use destructuring on a single object
-let getInfoString;
+let getInfoString = (film) => {}
 
 // Problem #2 // using spread operator on a simple array
 let getNewGenreTagsArray;

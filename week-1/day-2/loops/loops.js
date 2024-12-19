@@ -80,7 +80,7 @@ function createBooleanEntries(array, name){
 //C: should use nested for loops
 function getCoursesByYear(array, year){
     //create an empty output
-    let output = [];
+    const output = [];
     //construct a for loop to go through the array "students"
     for (let i = 0; i < array.length; i++){
         //this is the current student object
@@ -89,8 +89,8 @@ function getCoursesByYear(array, year){
         for (let j = 0; j < courses.length; j++){
             //check if the courses last attempted year matches the input
             if (courses[j].dateOfLastAttempt.includes(year)){
-                let courseObj = {
-                    studentName: student.name,
+                const courseObj = {
+                    studentName: student[i].name,
                     courseName: courseName[j].name,
                     status: course[j].status,
                     observations: course[j].observations.length,
