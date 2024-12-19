@@ -55,15 +55,16 @@ function getStringValues(student) {
 // Problem #4 //
 //I: array of student objects, name of individual student in strings
 //O: new array with every key that has a boolean attached to it
+//C: use for loops and for in loops
 function createBooleanEntries(array, name){
     //create an empty output array
-    let output = [];
+    const output = [];
     //create a for loop to input through the input attay and find the student name
     for (let i = 0; i < array.length; i++) {
         if (array[i].name === name){     
     //create a for in loop to create a subarray of everything with a boolean, nested loop
-    for (let key in array[i]) {
-        if (typeof array[i][key] === "boolean"){
+    for (let key in array[i]){
+        if (typeof array[i][key] === 'boolean'){
             //push both the key property name and the whether the key is true or false
              output.push([key, array[i][key]]);
     }    
@@ -76,24 +77,25 @@ function createBooleanEntries(array, name){
 // Problem #5 //
 //I: array, string that represents year
 //O: an array with the studentName, course, status and observations
+//C: should use nested for loops
 function getCoursesByYear(array, year){
     //create an empty output
     let output = [];
     //construct a for loop to go through the array "students"
     for (let i = 0; i < array.length; i++){
         //this is the current student object
-        let student = array[i];
+        let courses = array[i].courses;
     //create a nested array that looks through the students courses
-        for (let j = 0; j < student.courses.length; j++){
+        for (let j = 0; j < courses.length; j++){
             //this is the current course
             let course = student.courses[j];
             //check if the courses last attempted year matches the input
             if (course.dateOfLastAttempt === year){
                 let courseObj = {
-                    studentId: student.id,
                     studentName: student.name,
-                    courseName: course.name,
-                    dateOfLastAttempt: course.dateOfLastAttempt
+                    courseName: courseName[j].name,
+                    status: course[j].status,
+                    observations: course[j].observations.length,
                   };
                   output.push(courseObj);
             }
