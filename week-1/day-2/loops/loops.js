@@ -32,10 +32,26 @@ function logHalf(students){
 }
 
 // Problem #3 //
-function getStringValues(student){
+// Problem #3 //
+// I: student object
+// O: output array with string values
+function getStringValues(student) {
+    // Create an empty array for the output to be pushed into
+    let output = [];
     
-}
-
+    // Use a for-in loop to iterate through the student object
+    for (let key in student) {
+      // Check if the value is a string and its length is longer than 3
+      if (typeof student[key] === "string" && student[key].length > 3) {
+        //if so push the key into the created output array
+        output.push(student[key]);
+      }
+    }
+  
+    // Return the output array
+    return output;
+  }
+  
 // Problem #4 //
 function createBooleanEntries(array, name){
     
