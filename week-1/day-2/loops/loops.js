@@ -60,16 +60,17 @@ function createBooleanEntries(array, name){
     let output = [];
     //create a for loop to input through the input attay and find the student name
     for (let i = 0; i < array.length; i++){
-        if (array[i].name === name){
-            //do something?
-        }
-    //create a for in loop to create a subarray of everything with a boolean
-    for (let key in array){
-        if (typeof array[key] === "boolean"){
-            //do something?
+        if (array[i].name === name){     
+    //create a for in loop to create a subarray of everything with a boolean, nested loop
+    for (let key in array[i]){
+        if (typeof array[i][key] === "boolean"){
+             output.push([key, array[i][key]]);
+    }    
+}
+break;
         }
     }
-    }    
+    return output;
 }
 
 // Problem #5 //
