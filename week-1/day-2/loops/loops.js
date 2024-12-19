@@ -62,7 +62,7 @@ function createBooleanEntries(array, name){
     for (let i = 0; i < array.length; i++) {
         if (array[i].name === name){     
     //create a for in loop to create a subarray of everything with a boolean, nested loop
-    for (var key in array[i]) {
+    for (let key in array[i]) {
         if (typeof array[i][key] === "boolean"){
             //push both the key property name and the whether the key is true or false
              output.push([key, array[i][key]]);
@@ -74,6 +74,30 @@ function createBooleanEntries(array, name){
 }
 
 // Problem #5 //
+//I: array, string that represents year
+//O: an array with the studentName, course, status and observations
 function getCoursesByYear(array, year){
-    
+    //create an empty output
+    let output = [];
+    //construct a for loop to go through the array "students"
+    for (let i = 0; i < array.length; i++){
+        //this is the current student object
+        let student = array[i];
+    //create a nested array that looks through the students courses
+        for (let j = 0; j < student.courses.length; j++){
+            //this is the current course
+            let course = student.courses[j];
+            //check if the courses last attempted year matches the input
+            if (course.dateOfLastAttempt === year){
+                let courseObj = {
+                    studentId: student.id,
+                    studentName: student.name,
+                    courseName: course.name,
+                    dateOfLastAttempt: course.dateOfLastAttempt
+                  };
+                  output.push(courseObj);
+            }
+        }
+    }
+    return output;
 }
