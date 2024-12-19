@@ -53,8 +53,23 @@ function getStringValues(student) {
   }
   
 // Problem #4 //
+//I: array of student objects, name of individual student in strings
+//O: new array with every key that has a boolean attached to it
 function createBooleanEntries(array, name){
-    
+    //create an empty output array
+    let output = [];
+    //create a for loop to input through the input attay and find the student name
+    for (let i = 0; i < array.length; i++){
+        if (array[i].name === name){
+            //do something?
+        }
+    //create a for in loop to create a subarray of everything with a boolean
+    for (let key in array){
+        if (typeof array[key] === "boolean"){
+            //do something?
+        }
+    }
+    }    
 }
 
 // Problem #5 //
