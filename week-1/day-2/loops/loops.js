@@ -78,26 +78,32 @@ function createBooleanEntries(array, name){
 //I: array, string that represents year
 //O: an array with the studentName, course, status and observations
 //C: should use nested for loops
-function getCoursesByYear(array, year){
-    //create an empty output
+function getCoursesByYear(array, year) {
+    // Create an empty output
     const output = [];
-    //construct a for loop to go through the array "students"
-    for (let i = 0; i < array.length; i++){
-        //this is the current student object
-        const courses = array[i].courses;
-    //create a nested array that looks through the students courses
-        for (let j = 0; j < courses.length; j++){
-            //check if the courses last attempted year matches the input
-            if (courses[j].dateOfLastAttempt.includes(year)){
+
+    // Loop through each student object in the array
+    for (let i = 0; i < array.length; i++) {
+        const student = array[i]; // Current student object
+        const courses = student.courses || []; // Safely access 'courses'
+
+        // Loop through the student's courses
+        for (let j = 0; j < courses.length; j++) {
+            const course = courses[j]; // Current course object
+
+            // Check if the course's dateOfLastAttempt includes the input year
+            if (course.dateOfLastAttempt && course.dateOfLastAttempt.includes(year)) {
                 const courseObj = {
-                    studentName: student[i].name,
-                    courseName: courseName[j].name,
-                    status: course[j].status,
-                    observations: course[j].observations.length,
-                  };
-                  output.push(courseObj);
+                    studentName: student.name, // Correct reference to student's name
+                    course: course.courseName,
+                    status: course.status,
+                    observations: course.observations ? course.observations.length : 0, // Safely count observations
+                };
+                output.push(courseObj); // Add the result to output
             }
         }
     }
+
     return output;
 }
+
