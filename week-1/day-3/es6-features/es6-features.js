@@ -1,8 +1,8 @@
 
 // Problem #1 // use destructuring on a single object
 let getInfoString = (film) => {
-    const {title, year, director} = film;
-    return `${title} (${year}) - directed by ${director}`;
+    const { title, year, name } = film;
+    return `${title} (${year}) - directed by ${name}`;
 }
 
 // Problem #2 // using spread operator on a simple array
@@ -34,7 +34,43 @@ let getNewObject = (film, key, value) => {
 }
 
 // Problem #4 // destructuring on each object using a for loop
-let printAwards;
-
+//I: an array called "films" and a string called "director"
+//O: the nomation and status of the nomination of the director input
+let printAwards = (films, director) => {
+    //loop through the films ARRAY and destructure three of the keys
+    for (let i = 0; i < films.length; i++){
+        const {filmTitle, category, status} = films[i];
+    //check if the film's director matches the input
+    if (films[i].director === director) {
+    //loop through the academy Awards array
+    for (let j = 0; i < academyAwards.length; j++){
+        //destructure
+        const {filmTitle, category, status} = academyAwards[j];
+    } //return with template literal
+    return `${status}: ${filmTitle} - ${category}`;
+}
+    }
+}
 // Problem #5 // use destructing on an array of arrays
-let updateAward;
+const updateAward = (film, nominatedFilm, category, updates) => {
+    // Find the nominated film in the academyAwards array
+    const updatedAwards = film.academyAwards.map((nomination) => {
+        // Check if this is the matching nomination
+        if (nomination.filmTitle === nominatedFilm && nomination.category === category) {
+            // Create a copy of the nomination using the spread operator
+            let updatedNomination = { ...nomination };
+
+            // Iterate through the updates array
+            for (let [key, value] of updates) {
+                updatedNomination[key] = value; // Update the key with the new value
+            }
+
+            return updatedNomination; // Return the updated nomination
+        }
+
+        return nomination; // Return the original nomination if not a match
+    });
+
+    return updatedAwards; // Return the updated academyAwards array
+};
+
