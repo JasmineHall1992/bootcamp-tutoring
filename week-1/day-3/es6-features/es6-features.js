@@ -1,7 +1,7 @@
 
 // Problem #1 // use destructuring on a single object
 let getInfoString = (film) => {
-    const {title, year, director} = film;Í
+    const {title, year, director} = film;
     return `${title} (${year}) - directed by ${director}`;
 }
 
@@ -26,7 +26,11 @@ let getNewGenreTagsArray  = (films, newTag) => {
 // Problem #3 // using spread operator to create a copy of an object
 let getNewObject = (film, key, value) => {
     //use the spread operator to make a copy of input object film
-    const filmCopy = [...films];
+    const filmCopy = {...film};
+    //add the new key to the copy using the push method, this is an object not an array
+    filmCopy[key] = value;
+    //return the copy
+    return filmCopy;
 }
 
 // Problem #4 // destructuring on each object using a for loop
